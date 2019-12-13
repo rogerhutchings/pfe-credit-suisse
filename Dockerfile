@@ -9,7 +9,7 @@ USER node
 
 RUN git init
 RUN git remote add origin https://github.com/zooniverse/Panoptes-Front-End.git
-RUN git fetch origin abab2b0115231dc34fd824f70f46a0c372b3043e --depth=1
+RUN git fetch origin refs/tags/credit-suisse --depth=1
 RUN git reset --hard FETCH_HEAD
 
 RUN npm install --unsafe-perm
