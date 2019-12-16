@@ -8,6 +8,7 @@
     docker build . -t pfe-credit-suisse
     docker run pfe-credit-suisse --env-file .env
     ```
+1. Access the volume at `/src/dist` to get the compiled production files.
 
 ## Example usage
 
@@ -15,7 +16,11 @@
 mkdir tmp
 docker build . -t pfe-credit-suisse
 docker run -t -i --mount type=bind,src="$(pwd)"/tmp,dst=/src/dist --env-file ./env pfe-credit-suisse
+cd tmp
+python -m SimpleHTTPServer 8000
 ```
+
+For more one-line http servers, take a look at https://gist.github.com/willurd/5720255
 
 ## Configuration
 
